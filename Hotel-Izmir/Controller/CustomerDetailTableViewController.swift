@@ -60,8 +60,8 @@ class CustomerDetailTableViewController: UITableViewController {
         
         fullNameLabel.text = fullName
         emailLabel.text = email
-        checkInDateLabel.text = ""
-        checkOutDateLabel.text = ""
+        checkInDateLabel.text = dateFormatter.string(for: checkIn)
+        checkOutDateLabel.text = dateFormatter.string(for: checkOut)
         numberOfAdultsLabel.text = numberOfAdults
         numberOfChildrenLabel.text = numberOfChildren
         

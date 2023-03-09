@@ -54,10 +54,13 @@ class RegistirationsTableViewController: UITableViewController {
         let registiration = registirations[indexPath.row]
         vc?.fullName = registiration.fullName()
         vc?.email = registiration.emailAdress
+        
         vc?.checkIn = registiration.checkInDate
         vc?.checkOut = registiration.checkOutDate
+        
         vc?.numberOfAdults = String(registiration.numberOfAdults)
         vc?.numberOfChildren = String(registiration.numberOfChildren)
+        
         vc?.hasWifi = registiration.wifi
         
         vc?.roomName = registiration.roomType.name
