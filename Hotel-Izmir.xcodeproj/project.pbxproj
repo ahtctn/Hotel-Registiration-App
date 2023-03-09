@@ -15,6 +15,8 @@
 		7B04C85529B90E960037361F /* RegistirationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B04C85429B90E960037361F /* RegistirationModel.swift */; };
 		7B04C85729B90EAF0037361F /* RoomTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B04C85629B90EAF0037361F /* RoomTypeModel.swift */; };
 		7B04C85929B90F900037361F /* AddRegistirationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B04C85829B90F900037361F /* AddRegistirationTableViewController.swift */; };
+		7B87E5EB29BA177A0005C96C /* RegistirationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87E5EA29BA177A0005C96C /* RegistirationsTableViewController.swift */; };
+		7B87E5ED29BA279A0005C96C /* CustomerDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87E5EC29BA279A0005C96C /* CustomerDetailTableViewController.swift */; };
 		7BE3062729B96E8C00E76AB7 /* SelectRoomTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE3062629B96E8C00E76AB7 /* SelectRoomTypeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		7B04C85429B90E960037361F /* RegistirationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistirationModel.swift; sourceTree = "<group>"; };
 		7B04C85629B90EAF0037361F /* RoomTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTypeModel.swift; sourceTree = "<group>"; };
 		7B04C85829B90F900037361F /* AddRegistirationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegistirationTableViewController.swift; sourceTree = "<group>"; };
+		7B87E5EA29BA177A0005C96C /* RegistirationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistirationsTableViewController.swift; sourceTree = "<group>"; };
+		7B87E5EC29BA279A0005C96C /* CustomerDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailTableViewController.swift; sourceTree = "<group>"; };
 		7BE3062629B96E8C00E76AB7 /* SelectRoomTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomTypeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +84,8 @@
 			children = (
 				7B04C85829B90F900037361F /* AddRegistirationTableViewController.swift */,
 				7BE3062629B96E8C00E76AB7 /* SelectRoomTypeTableViewController.swift */,
+				7B87E5EA29BA177A0005C96C /* RegistirationsTableViewController.swift */,
+				7B87E5EC29BA279A0005C96C /* CustomerDetailTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -172,10 +178,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BE3062729B96E8C00E76AB7 /* SelectRoomTypeTableViewController.swift in Sources */,
+				7B87E5EB29BA177A0005C96C /* RegistirationsTableViewController.swift in Sources */,
 				7B04C83D29B90DE80037361F /* AppDelegate.swift in Sources */,
 				7B04C85529B90E960037361F /* RegistirationModel.swift in Sources */,
 				7B04C85729B90EAF0037361F /* RoomTypeModel.swift in Sources */,
 				7B04C83F29B90DE80037361F /* SceneDelegate.swift in Sources */,
+				7B87E5ED29BA279A0005C96C /* CustomerDetailTableViewController.swift in Sources */,
 				7B04C85929B90F900037361F /* AddRegistirationTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

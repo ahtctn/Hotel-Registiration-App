@@ -21,4 +21,8 @@ struct RegistirationModel {
     
     var roomType: RoomTypeModel
     var wifi: Bool
+    
+    func fullName() -> String {
+        return firstName + " " + lastName
+    }
 }

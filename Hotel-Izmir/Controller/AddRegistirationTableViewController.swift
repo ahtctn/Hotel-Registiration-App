@@ -38,13 +38,13 @@ class AddRegistirationTableViewController: UITableViewController, SelectRoomType
     
     var isCheckInDatePickerShown: Bool = false {
         didSet {
-            checkInDateLabel.isHidden = !isCheckInDatePickerShown
+            checkInDatePicker.isHidden = !isCheckInDatePickerShown
         }
     }
     
     var isCheckOutDatePickerShown: Bool = false {
         didSet {
-            checkOutDateLabel.isHidden = !isCheckOutDatePickerShown
+            checkOutDatePicker.isHidden = !isCheckOutDatePickerShown
         }
     }
     
@@ -55,7 +55,7 @@ class AddRegistirationTableViewController: UITableViewController, SelectRoomType
         let lastName = lastNameTextField.text!
         let email = emailTextField.text!
         let checkInDate = checkInDatePicker.date
-        let checkOutDate = checkInDatePicker.date
+        let checkOutDate = checkOutDatePicker.date
         let numberOfAdults = Int(numberOfAdultsStepper.value)
         let numberOfChildren = Int(numberOfChildrenStepper.value)
         let hasWifi = wifiSwitch.isOn
@@ -67,7 +67,10 @@ class AddRegistirationTableViewController: UITableViewController, SelectRoomType
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dateStartingSettings()
+        let midnightToday = Calendar.current.startOfDay(for: Date())
+        checkInDatePicker.minimumDate = midnightToday
+        checkInDatePicker.date = midnightToday
+        
         updateNumberOfCustomers()
         updateDateViews()
         updateRoomType()
@@ -140,21 +143,15 @@ class AddRegistirationTableViewController: UITableViewController, SelectRoomType
         
     }
     
-    func dateStartingSettings() {
-        let midnightToday = Calendar.current.startOfDay(for: Date())
-        checkInDatePicker.minimumDate = midnightToday
-        checkInDatePicker.date = midnightToday
-    }
-    
     func updateDateViews() {
+        let oneDay = Double(24 * 60 * 60)
+        checkOutDatePicker.minimumDate = checkInDatePicker.date.addingTimeInterval(oneDay)
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         
         checkInDateLabel.text = dateFormatter.string(from: checkInDatePicker.date)
         checkOutDateLabel.text = dateFormatter.string(from: checkOutDatePicker.date)
-        let oneDay = 24 * 60 * 60
-        checkOutDatePicker.minimumDate = checkInDatePicker.date.addingTimeInterval(Double(oneDay))
         
     }
     
@@ -191,6 +188,10 @@ class AddRegistirationTableViewController: UITableViewController, SelectRoomType
     
     @IBAction func wifiSwitchChanged (_ sender: UISwitch) {
         
+    }
+    
+    @IBAction func cancelBarButtonTapped (_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
 
 }
