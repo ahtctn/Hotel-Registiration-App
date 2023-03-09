@@ -7,11 +7,22 @@
 
 import UIKit
 
+protocol SelectRoomTypeTableViewControllerDelegate: class {
+    //class: Protokolün yalnızca Class'lar tarafından desteklenebileceğini belirtmek için kullanılır
+    func didSelect(roomType: RoomTypeModel)
+}
+
 class SelectRoomTypeTableViewController: UITableViewController {
     //MARK: UIELEMENTS
+    
     //MARK: PROPERTIES
     let identifier: String = "RoomTypeCell"
     var selectedRoomType: RoomTypeModel?
+    weak var delegate: SelectRoomTypeTableViewControllerDelegate?
+    //Normalde değişkenler, hangi sınıfta tanımlandıysa aralarında strong relation kurar
+    //Fakat biz bu değişkeni 'weak' olarak tanımladığımızdan dolayı şu anda delegate yaşadığı zaman
+    //Class yaşamak zorunda değildir. Çünkü aslında delegate bir önceki sayfanın referansıdır.
+    //Bundan dolayı iki class arasında anlamsız bir strong relationship'e gerek duyulmamaktadır.
     
     //MARK: LIFE CYCLE
     override func viewDidLoad() {
@@ -47,6 +58,7 @@ class SelectRoomTypeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         selectedRoomType = RoomTypeModel.allRoomTypes[indexPath.row]
+        delegate?.didSelect(roomType: selectedRoomType!)
         tableView.reloadData()
     }
     
