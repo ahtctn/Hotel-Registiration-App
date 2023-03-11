@@ -1180,7 +1180,7 @@
         <scene sceneID="FaB-ph-hOo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="enk-6L-rY2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Location" selectedImage="location" catalog="system" id="APQ-h9-dKO"/>
+                    <tabBarItem key="tabBarItem" title="Location" image="location.fill" catalog="system" selectedImage="location.fill" id="APQ-h9-dKO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eNk-5V-mho">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
@@ -1200,7 +1200,7 @@
         <image name="book.fill" catalog="system" width="128" height="95"/>
         <image name="building.2.fill" catalog="system" width="128" height="108"/>
         <image name="envelope.fill" catalog="system" width="128" height="93"/>
-        <image name="location" catalog="system" width="128" height="121"/>
+        <image name="location.fill" catalog="system" width="128" height="119"/>
         <image name="phone.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

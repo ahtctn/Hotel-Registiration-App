@@ -7,24 +7,37 @@
 
 import UIKit
 import MapKit
+import CoreLocation
+
 class MapViewController: UIViewController {
 
+    //MARK: OUTLETS
     @IBOutlet weak var mapView: MKMapView!
+
+    //MARK: PROPERTIES
+    fileprivate let locationManager: CLLocationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManagerUpdates()
+        mapLogicalUpdates()
+    }
+    
+    func mapLogicalUpdates(){
+        mapView.showsUserLocation = true
+    }
+    
+    func locationManagerUpdates() {
+        //Kullanıcıya Map özelliğini kullanabilmek adına uygulama açıldığında istekte bulunuyoruz.
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.startUpdatingLocation()
 
-        // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
