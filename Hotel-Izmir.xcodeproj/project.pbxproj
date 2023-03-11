@@ -17,6 +17,9 @@
 		7B04C85929B90F900037361F /* AddRegistirationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B04C85829B90F900037361F /* AddRegistirationTableViewController.swift */; };
 		7B87E5EB29BA177A0005C96C /* RegistirationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87E5EA29BA177A0005C96C /* RegistirationsTableViewController.swift */; };
 		7B87E5ED29BA279A0005C96C /* CustomerDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87E5EC29BA279A0005C96C /* CustomerDetailTableViewController.swift */; };
+		7BCA594D29BB61CF0028638C /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCA594C29BB61CF0028638C /* ExploreViewController.swift */; };
+		7BCA594F29BBA56C0028638C /* HotelPromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCA594E29BBA56C0028638C /* HotelPromotionCollectionViewCell.swift */; };
+		7BCA595329BBF1270028638C /* RoomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCA595229BBF1270028638C /* RoomDetailViewController.swift */; };
 		7BE3062729B96E8C00E76AB7 /* SelectRoomTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE3062629B96E8C00E76AB7 /* SelectRoomTypeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,9 @@
 		7B04C85829B90F900037361F /* AddRegistirationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegistirationTableViewController.swift; sourceTree = "<group>"; };
 		7B87E5EA29BA177A0005C96C /* RegistirationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistirationsTableViewController.swift; sourceTree = "<group>"; };
 		7B87E5EC29BA279A0005C96C /* CustomerDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailTableViewController.swift; sourceTree = "<group>"; };
+		7BCA594C29BB61CF0028638C /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		7BCA594E29BBA56C0028638C /* HotelPromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelPromotionCollectionViewCell.swift; sourceTree = "<group>"; };
+		7BCA595229BBF1270028638C /* RoomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailViewController.swift; sourceTree = "<group>"; };
 		7BE3062629B96E8C00E76AB7 /* SelectRoomTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomTypeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,10 +88,8 @@
 		7B04C85029B90DFB0037361F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7B04C85829B90F900037361F /* AddRegistirationTableViewController.swift */,
-				7BE3062629B96E8C00E76AB7 /* SelectRoomTypeTableViewController.swift */,
-				7B87E5EA29BA177A0005C96C /* RegistirationsTableViewController.swift */,
-				7B87E5EC29BA279A0005C96C /* CustomerDetailTableViewController.swift */,
+				7BCA594B29BB61870028638C /* ContactController */,
+				7BCA594929BB61630028638C /* RegistirationsController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -104,6 +108,27 @@
 				7B04C85629B90EAF0037361F /* RoomTypeModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7BCA594929BB61630028638C /* RegistirationsController */ = {
+			isa = PBXGroup;
+			children = (
+				7B04C85829B90F900037361F /* AddRegistirationTableViewController.swift */,
+				7BE3062629B96E8C00E76AB7 /* SelectRoomTypeTableViewController.swift */,
+				7B87E5EA29BA177A0005C96C /* RegistirationsTableViewController.swift */,
+				7B87E5EC29BA279A0005C96C /* CustomerDetailTableViewController.swift */,
+			);
+			name = RegistirationsController;
+			sourceTree = "<group>";
+		};
+		7BCA594B29BB61870028638C /* ContactController */ = {
+			isa = PBXGroup;
+			children = (
+				7BCA594C29BB61CF0028638C /* ExploreViewController.swift */,
+				7BCA594E29BBA56C0028638C /* HotelPromotionCollectionViewCell.swift */,
+				7BCA595229BBF1270028638C /* RoomDetailViewController.swift */,
+			);
+			name = ContactController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,9 +207,12 @@
 				7B04C83D29B90DE80037361F /* AppDelegate.swift in Sources */,
 				7B04C85529B90E960037361F /* RegistirationModel.swift in Sources */,
 				7B04C85729B90EAF0037361F /* RoomTypeModel.swift in Sources */,
+				7BCA595329BBF1270028638C /* RoomDetailViewController.swift in Sources */,
+				7BCA594D29BB61CF0028638C /* ExploreViewController.swift in Sources */,
 				7B04C83F29B90DE80037361F /* SceneDelegate.swift in Sources */,
 				7B87E5ED29BA279A0005C96C /* CustomerDetailTableViewController.swift in Sources */,
 				7B04C85929B90F900037361F /* AddRegistirationTableViewController.swift in Sources */,
+				7BCA594F29BBA56C0028638C /* HotelPromotionCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

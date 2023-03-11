@@ -77,6 +77,5 @@ class RegistirationsTableViewController: UITableViewController {
               let registiration = source.registiration else { return }
         registirations.append(registiration)
         tableView.reloadData()
-        
     }
 }
