@@ -56,8 +56,6 @@ class CustomerDetailTableViewController: UITableViewController {
     
     func updateLifecycle() {
         dateFormatter.dateStyle = .full
-        
-        
         fullNameLabel.text = fullName
         emailLabel.text = email
         checkInDateLabel.text = dateFormatter.string(for: checkIn)

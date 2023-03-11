@@ -3,6 +3,7 @@
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -353,13 +354,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="430" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5o-IS-8fl">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5o-IS-8fl">
                                                     <rect key="frame" x="19.999999999999996" y="14" width="46.666666666666657" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1290 ₺" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLa-5F-ih2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1290 ₺" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLa-5F-ih2">
                                                     <rect key="frame" x="140" y="14" width="60" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -381,13 +382,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="430" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1e-ey-vdX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1e-ey-vdX">
                                                     <rect key="frame" x="20" y="14" width="39" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1300 ₺" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYt-qr-QgZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1300 ₺" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYt-qr-QgZ">
                                                     <rect key="frame" x="140" y="14" width="60" height="22"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -794,7 +795,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ya8-KA-L7z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="daf-jy-o7D" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2272.3076923076924" y="-85.308056872037909"/>
+            <point key="canvasLocation" x="4027" y="-14"/>
         </scene>
         <!--Select Room Type-->
         <scene sceneID="2yX-3i-ekc">
@@ -839,7 +840,38 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FT7-GM-9I4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3096.9230769230767" y="-85.308056872037909"/>
+            <point key="canvasLocation" x="4966" y="-14"/>
+        </scene>
+        <!--Navigation-->
+        <scene sceneID="sIa-qx-s2P">
+            <objects>
+                <viewController id="S8M-rv-gZQ" customClass="MapViewController" customModule="Hotel_Izmir" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R6M-2a-hOU">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ek-4O-Dzv">
+                                <rect key="frame" x="0.0" y="103" width="430" height="746"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dpE-vZ-F9U"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Ek-4O-Dzv" firstAttribute="top" secondItem="dpE-vZ-F9U" secondAttribute="top" id="3sF-pB-3bG"/>
+                            <constraint firstItem="3Ek-4O-Dzv" firstAttribute="leading" secondItem="dpE-vZ-F9U" secondAttribute="leading" id="Kud-aa-uX0"/>
+                            <constraint firstItem="dpE-vZ-F9U" firstAttribute="bottom" secondItem="3Ek-4O-Dzv" secondAttribute="bottom" id="UAG-ij-k5P"/>
+                            <constraint firstItem="dpE-vZ-F9U" firstAttribute="trailing" secondItem="3Ek-4O-Dzv" secondAttribute="trailing" id="VFZ-3T-qSs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Navigation" id="HLR-g9-BOK"/>
+                    <connections>
+                        <outlet property="mapView" destination="3Ek-4O-Dzv" id="JWf-BL-tED"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V3L-n2-LOp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3110.2325581395348" y="699.78540772532199"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YX9-u9-WRW">
@@ -857,7 +889,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JOD-qI-gpl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1285" y="-85"/>
+            <point key="canvasLocation" x="3170" y="-14"/>
         </scene>
         <!--Explore-->
         <scene sceneID="q1N-2w-8Ud">
@@ -1111,17 +1143,19 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4ej-7F-Peh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mba-2W-gfw">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="KNj-oO-fSQ" kind="relationship" relationship="viewControllers" id="cxr-uz-LCE"/>
                         <segue destination="veh-7M-9WP" kind="relationship" relationship="viewControllers" id="5Na-cl-p2A"/>
+                        <segue destination="enk-6L-rY2" kind="relationship" relationship="viewControllers" id="lNq-HK-bn6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IS4-w9-8Rh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1284.6153846153845" y="-746.44549763033172"/>
+            <point key="canvasLocation" x="1146" y="-747"/>
         </scene>
         <!--Explore-->
         <scene sceneID="KYi-PO-30I">
@@ -1142,11 +1176,31 @@
             </objects>
             <point key="canvasLocation" x="2213" y="-1429"/>
         </scene>
+        <!--Location-->
+        <scene sceneID="FaB-ph-hOo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="enk-6L-rY2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Location" selectedImage="location" catalog="system" id="APQ-h9-dKO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eNk-5V-mho">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="S8M-rv-gZQ" kind="relationship" relationship="rootViewController" id="z8h-vO-Juw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="718-9r-pBe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2211.6279069767443" y="699.78540772532199"/>
+        </scene>
     </scenes>
     <resources>
         <image name="book.fill" catalog="system" width="128" height="95"/>
         <image name="building.2.fill" catalog="system" width="128" height="108"/>
         <image name="envelope.fill" catalog="system" width="128" height="93"/>
+        <image name="location" catalog="system" width="128" height="121"/>
         <image name="phone.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

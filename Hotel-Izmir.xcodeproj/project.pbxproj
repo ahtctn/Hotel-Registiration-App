@@ -17,6 +17,7 @@
 		7B04C85929B90F900037361F /* AddRegistirationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B04C85829B90F900037361F /* AddRegistirationTableViewController.swift */; };
 		7B87E5EB29BA177A0005C96C /* RegistirationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87E5EA29BA177A0005C96C /* RegistirationsTableViewController.swift */; };
 		7B87E5ED29BA279A0005C96C /* CustomerDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87E5EC29BA279A0005C96C /* CustomerDetailTableViewController.swift */; };
+		7BAC71E029BC07A200BDCF79 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC71DF29BC07A200BDCF79 /* MapViewController.swift */; };
 		7BCA594D29BB61CF0028638C /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCA594C29BB61CF0028638C /* ExploreViewController.swift */; };
 		7BCA594F29BBA56C0028638C /* HotelPromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCA594E29BBA56C0028638C /* HotelPromotionCollectionViewCell.swift */; };
 		7BCA595329BBF1270028638C /* RoomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCA595229BBF1270028638C /* RoomDetailViewController.swift */; };
@@ -36,6 +37,7 @@
 		7B04C85829B90F900037361F /* AddRegistirationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegistirationTableViewController.swift; sourceTree = "<group>"; };
 		7B87E5EA29BA177A0005C96C /* RegistirationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistirationsTableViewController.swift; sourceTree = "<group>"; };
 		7B87E5EC29BA279A0005C96C /* CustomerDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailTableViewController.swift; sourceTree = "<group>"; };
+		7BAC71DF29BC07A200BDCF79 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7BCA594C29BB61CF0028638C /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		7BCA594E29BBA56C0028638C /* HotelPromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelPromotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		7BCA595229BBF1270028638C /* RoomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		7B04C85029B90DFB0037361F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7BAC71DE29BC064000BDCF79 /* MapKitController */,
 				7BCA594B29BB61870028638C /* ContactController */,
 				7BCA594929BB61630028638C /* RegistirationsController */,
 			);
@@ -108,6 +111,14 @@
 				7B04C85629B90EAF0037361F /* RoomTypeModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7BAC71DE29BC064000BDCF79 /* MapKitController */ = {
+			isa = PBXGroup;
+			children = (
+				7BAC71DF29BC07A200BDCF79 /* MapViewController.swift */,
+			);
+			name = MapKitController;
 			sourceTree = "<group>";
 		};
 		7BCA594929BB61630028638C /* RegistirationsController */ = {
@@ -209,6 +220,7 @@
 				7B04C85729B90EAF0037361F /* RoomTypeModel.swift in Sources */,
 				7BCA595329BBF1270028638C /* RoomDetailViewController.swift in Sources */,
 				7BCA594D29BB61CF0028638C /* ExploreViewController.swift in Sources */,
+				7BAC71E029BC07A200BDCF79 /* MapViewController.swift in Sources */,
 				7B04C83F29B90DE80037361F /* SceneDelegate.swift in Sources */,
 				7B87E5ED29BA279A0005C96C /* CustomerDetailTableViewController.swift in Sources */,
 				7B04C85929B90F900037361F /* AddRegistirationTableViewController.swift in Sources */,

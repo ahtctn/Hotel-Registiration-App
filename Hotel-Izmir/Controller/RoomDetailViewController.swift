@@ -30,6 +30,7 @@ class RoomDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateLabelsWithTheProperties()
     }
     
     func updateLabelsWithTheProperties() {
@@ -44,11 +45,5 @@ class RoomDetailViewController: UIViewController {
         } else {
             hasHotWater.text = "Not sıcak su bulunmamaktadır."
         }
-    }
-    //MARK: ACTIONS
-    @IBAction func unwindFromExploreVC(unwindSegue: UIStoryboardSegue) {
-        guard let source = unwindSegue.source as? ExploreViewController,
-              let roomType = source. else { return }
-        
     }
 }
