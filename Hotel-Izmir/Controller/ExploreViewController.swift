@@ -29,9 +29,7 @@ class ExploreViewController: UIViewController, MFMailComposeViewControllerDelega
     
     let identifierForPromotion: String = "hotelPromotionID"
     let storyboardID: String = "RoomDetailViewController"
-    
-    var hotelsToPromote: RoomTypeModel? 
-    var hotelPromotionCollectionViewCell: HotelPromotionCollectionViewCell?
+    let goToRoomDetailID: String = "goToRoomDetailVC"
     
     var roomTypes = [RoomTypeModel]()
     
@@ -113,19 +111,19 @@ extension ExploreViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ExploreViewController: UICollectionViewDelegate {
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let roomType = RoomTypeModel.allRoomTypes[indexPath.row]
+        print(roomType)
+        dismiss(animated: true, completion: nil)
         let vc = storyboard?.instantiateViewController(withIdentifier: storyboardID) as? RoomDetailViewController
-        vc?.nameProperty = roomTypes[indexPath.row].name
-        vc?.shortName = roomTypes[indexPath.row].shortName
-        vc?.roomImageProperty = roomTypes[indexPath.row].roomImage
-        vc?.roomDescription.text = roomTypes[indexPath.row].description
-        vc?.price1 = roomTypes[indexPath.row].price
-        vc?.price2 = roomTypes[indexPath.row].price
-        vc?.price3 = roomTypes[indexPath.row].price
-        vc?.hasHotWaterProperty = roomTypes[indexPath.row].hasHotWater
+        vc?.roomImageProperty = roomType.roomImage
+        vc?.nameProperty = roomType.roomNameWithShortVersion()
+        vc?.roomDescriptionProperty = roomType.description
+        vc?.price1 = roomType.price
+        vc?.hasHotWaterProperty = roomType.hasHotWater
         
         self.navigationController?.pushViewController(vc!, animated: true)
-        
     }
 }
 

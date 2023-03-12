@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol SelectRoomTypeTableViewControllerDelegate: class {
+protocol SelectRoomTypeTableViewControllerDelegate: AnyObject {
     //class: Protokolün yalnızca Class'lar tarafından desteklenebileceğini belirtmek için kullanılır
     func didSelect(roomType: RoomTypeModel)
 }

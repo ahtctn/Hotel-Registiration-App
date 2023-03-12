@@ -13,19 +13,19 @@ class RoomDetailViewController: UIViewController {
     @IBOutlet weak var roomImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var roomDescription: UITextView!
-    @IBOutlet weak var priceLabel1: UILabel!
-    @IBOutlet weak var priceLabel2: UILabel!
-    @IBOutlet weak var priceLabel3: UILabel!
+
+    @IBOutlet weak var priceLabel: UILabel!
+
     @IBOutlet weak var hasHotWater: UILabel!
     
     //MARK: PROPERTIES
     var roomImageProperty: UIImage = UIImage(systemName: "person.fill")!
     var nameProperty: String = ""
     var shortName: String = ""
+   
     var roomDescriptionProperty: String = ""
     var price1: Int = 0
-    var price2: Int = 0
-    var price3: Int = 0
+
     var hasHotWaterProperty: Bool = false
     
     override func viewDidLoad() {
@@ -35,15 +35,14 @@ class RoomDetailViewController: UIViewController {
     
     func updateLabelsWithTheProperties() {
         roomImage.image = roomImageProperty
-        name.text = "\(nameProperty)- \(shortName)"
+        name.text = nameProperty
         roomDescription.text = roomDescriptionProperty
-        priceLabel1.text = "\(price1) ₺"
-        priceLabel1.text = "\(price2) ₺"
-        priceLabel1.text = "\(price3) ₺"
+        priceLabel.text = "\(price1) ₺"
+        
         if hasHotWaterProperty {
-            hasHotWater.text = "Not: Sıcak su bulunmaktadır."
+            hasHotWater.text = "✅ Not: Sıcak su bulunmaktadır."
         } else {
-            hasHotWater.text = "Not sıcak su bulunmamaktadır."
+            hasHotWater.text = "⭕️ Not sıcak su bulunmamaktadır."
         }
     }
 }

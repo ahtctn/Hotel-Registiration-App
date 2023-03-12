@@ -175,7 +175,7 @@ class AddRegistirationTableViewController: UITableViewController, SelectRoomType
     
     //MARK: ACTIONS
     @IBAction func doneBarButtonTapped(_ button: UIBarButtonItem) {
-        print(registiration)
+        print(registiration as Any)
     }
     
     @IBAction func datePickerValueChanged(_ picker: UIDatePicker) {
