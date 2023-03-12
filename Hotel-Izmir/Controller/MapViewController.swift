@@ -15,17 +15,25 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
 
     //MARK: PROPERTIES
-    var locationManager: CLLocationManager? = nil
+    var locationManager: CLLocationManager?
+    let distanceSpan: CLLocationDistance = 500
+    let locationLatLon = CLLocation(latitude: 39.82, longitude: -86.344235)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManagerUpdates()
         mapLogicalUpdates()
         checkLocationAuthorization()
+        zoomLevel(location: locationLatLon)
     }
     
-    func mapLogicalUpdates(){
+    private func mapLogicalUpdates(){
         mapView.showsUserLocation = true
+    }
+    
+    private func zoomLevel(location: CLLocation) {
+        let mapCoordinates = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: distanceSpan, longitudinalMeters: distanceSpan)
+        mapView.setRegion(mapCoordinates, animated: true)
     }
     
     private func locationManagerUpdates() {
@@ -34,9 +42,8 @@ class MapViewController: UIViewController {
         
         locationManager?.requestWhenInUseAuthorization()
         locationManager?.requestAlwaysAuthorization()
-        
-        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager?.distanceFilter = kCLDistanceFilterNone
+        locationManager?.requestLocation()
+         
         locationManager?.startUpdatingLocation()
     }
     
@@ -46,9 +53,8 @@ class MapViewController: UIViewController {
         
         switch locationManager.authorizationStatus {
         case .authorizedWhenInUse, .authorizedAlways:
-            print("authorized")
-            let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 750, longitudinalMeters: 750)
-            mapView.setRegion(region, animated: true)
+            zoomLevel(location: locationLatLon)
+            
         case .restricted:
             print("restricted")
         case .notDetermined, .denied:
