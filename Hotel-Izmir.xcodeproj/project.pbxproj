@@ -90,9 +90,9 @@
 		7B04C85029B90DFB0037361F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7BAC71DE29BC064000BDCF79 /* MapKitController */,
-				7BCA594B29BB61870028638C /* ContactController */,
-				7BCA594929BB61630028638C /* RegistirationsController */,
+				7BAC71DE29BC064000BDCF79 /* Map */,
+				7BCA594B29BB61870028638C /* RoomDetail */,
+				7BCA594929BB61630028638C /* Registiration */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -113,15 +113,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		7BAC71DE29BC064000BDCF79 /* MapKitController */ = {
+		7BAC71DE29BC064000BDCF79 /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				7BAC71DF29BC07A200BDCF79 /* MapViewController.swift */,
 			);
-			name = MapKitController;
+			name = Map;
 			sourceTree = "<group>";
 		};
-		7BCA594929BB61630028638C /* RegistirationsController */ = {
+		7BCA594929BB61630028638C /* Registiration */ = {
 			isa = PBXGroup;
 			children = (
 				7B04C85829B90F900037361F /* AddRegistirationTableViewController.swift */,
@@ -129,17 +129,17 @@
 				7B87E5EA29BA177A0005C96C /* RegistirationsTableViewController.swift */,
 				7B87E5EC29BA279A0005C96C /* CustomerDetailTableViewController.swift */,
 			);
-			name = RegistirationsController;
+			name = Registiration;
 			sourceTree = "<group>";
 		};
-		7BCA594B29BB61870028638C /* ContactController */ = {
+		7BCA594B29BB61870028638C /* RoomDetail */ = {
 			isa = PBXGroup;
 			children = (
 				7BCA594C29BB61CF0028638C /* ExploreViewController.swift */,
 				7BCA594E29BBA56C0028638C /* HotelPromotionCollectionViewCell.swift */,
 				7BCA595229BBF1270028638C /* RoomDetailViewController.swift */,
 			);
-			name = ContactController;
+			name = RoomDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +374,8 @@
 				DEVELOPMENT_TEAM = KTK732WRHB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Hotel-Izmir/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Hotel Izmir Requires Location So It Can Show Closest Hotel Izmır Buildings.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Hotel Izmir Requires Location So It Can Show Closest Hotel Izmır Buildings.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -402,6 +404,8 @@
 				DEVELOPMENT_TEAM = KTK732WRHB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Hotel-Izmir/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Hotel Izmir Requires Location So It Can Show Closest Hotel Izmır Buildings.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Hotel Izmir Requires Location So It Can Show Closest Hotel Izmır Buildings.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

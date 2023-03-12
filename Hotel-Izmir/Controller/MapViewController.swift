@@ -15,20 +15,16 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
 
     //MARK: PROPERTIES
-    var locationManager: CLLocationManager?
+    //Hem instance hem property olarak oluşturduk.
+    var locationManager: CLLocationManager? = CLLocationManager()
     let distanceSpan: CLLocationDistance = 500
     let locationLatLon = CLLocation(latitude: 39.82, longitude: -86.344235)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManagerUpdates()
-        mapLogicalUpdates()
-        checkLocationAuthorization()
-        zoomLevel(location: locationLatLon)
-    }
-    
-    private func mapLogicalUpdates(){
         mapView.showsUserLocation = true
+        checkLocationAuthorization()
     }
     
     private func zoomLevel(location: CLLocation) {
@@ -53,15 +49,44 @@ class MapViewController: UIViewController {
         
         switch locationManager.authorizationStatus {
         case .authorizedWhenInUse, .authorizedAlways:
-            zoomLevel(location: locationLatLon)
+            
+            let alertName: String = "alertViewRestricted"
+            alertActions(actionName: alertName)
+            let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 750, longitudinalMeters: 750)
+            mapView.setRegion(region, animated: true)
+        
+        case .notDetermined, .denied:
+            let alertName: String = "alertViewNotDetermined_Denied"
+            alertActions(actionName: alertName)
+            
             
         case .restricted:
+            let alertName: String = "alertViewRestricted"
             print("restricted")
-        case .notDetermined, .denied:
-            print("not determined, denied")
+            alertActions(actionName: alertName)
             
         @unknown default:
             print("unknown default")
+        }
+    }
+    
+    func alertActions(actionName: String) {
+        let alertViewNotDetermined_Denied = UIAlertController(title: "Not Authorized", message: "Location services for the Hotel Izmir is denied or not determined yet. Please check the authorizations for the app.", preferredStyle: .alert)
+        alertViewNotDetermined_Denied.addAction(UIAlertAction(title: "Open in Settings", style: .default, handler: { _ in
+            //burası
+        }))
+        
+        let alertViewRestricted = UIAlertController(title: "Restricted", message: "Location services for the hotel Izmir is restricted. Please check the authorizations for the app.", preferredStyle: .alert)
+        alertViewRestricted.addAction(UIAlertAction(title: "Open in Settings", style: .default, handler: { _ in
+            //burası
+        }))
+        alertViewRestricted.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        alertViewNotDetermined_Denied.addAction(UIAlertAction(title: "OK", style: .cancel))
+        if actionName == "alertViewNotDetermined_Denied" {
+            self.present(alertViewNotDetermined_Denied, animated: true)
+        } else if actionName == "alertViewRestricted"{
+            self.present(alertViewRestricted, animated: true)
         }
     }
 }
