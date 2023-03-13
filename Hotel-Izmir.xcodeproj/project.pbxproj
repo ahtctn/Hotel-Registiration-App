@@ -20,6 +20,7 @@
 		7B0D0DCA29BEA90400CEA9AD /* PlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D0DC929BEA90400CEA9AD /* PlacesTableViewController.swift */; };
 		7B0D0DCE29BEB50500CEA9AD /* PlaceMapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D0DCD29BEB50500CEA9AD /* PlaceMapDetailViewController.swift */; };
 		7B0D0DD029BEBE8700CEA9AD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D0DCF29BEBE8700CEA9AD /* String+Extensions.swift */; };
+		7B66412E29BF32A80059ABB8 /* Encode+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B66412D29BF32A80059ABB8 /* Encode+Decode.swift */; };
 		7B87E5EB29BA177A0005C96C /* RegistirationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87E5EA29BA177A0005C96C /* RegistirationsTableViewController.swift */; };
 		7B87E5ED29BA279A0005C96C /* CustomerDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87E5EC29BA279A0005C96C /* CustomerDetailTableViewController.swift */; };
 		7BAC71E029BC07A200BDCF79 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC71DF29BC07A200BDCF79 /* MapViewController.swift */; };
@@ -45,6 +46,7 @@
 		7B0D0DC929BEA90400CEA9AD /* PlacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewController.swift; sourceTree = "<group>"; };
 		7B0D0DCD29BEB50500CEA9AD /* PlaceMapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMapDetailViewController.swift; sourceTree = "<group>"; };
 		7B0D0DCF29BEBE8700CEA9AD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		7B66412D29BF32A80059ABB8 /* Encode+Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encode+Decode.swift"; sourceTree = "<group>"; };
 		7B87E5EA29BA177A0005C96C /* RegistirationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistirationsTableViewController.swift; sourceTree = "<group>"; };
 		7B87E5EC29BA279A0005C96C /* CustomerDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailTableViewController.swift; sourceTree = "<group>"; };
 		7BAC71DF29BC07A200BDCF79 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				7B04C85029B90DFB0037361F /* Controller */,
 				7B0D0DC229BE9D6300CEA9AD /* Annotation */,
 				7B0D0DC629BE9F1E00CEA9AD /* Extensions */,
+				7B66412C29BF32780059ABB8 /* Encode+Decode */,
 				7B0D0DC329BE9D7300CEA9AD /* SystemFolders */,
 				7B04C84229B90DE80037361F /* Main.storyboard */,
 				7B04C84529B90DE90037361F /* Assets.xcassets */,
@@ -149,6 +152,14 @@
 			);
 			name = Extensions;
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		7B66412C29BF32780059ABB8 /* Encode+Decode */ = {
+			isa = PBXGroup;
+			children = (
+				7B66412D29BF32A80059ABB8 /* Encode+Decode.swift */,
+			);
+			path = "Encode+Decode";
 			sourceTree = "<group>";
 		};
 		7BAC71DE29BC064000BDCF79 /* Map */ = {
@@ -254,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BE3062729B96E8C00E76AB7 /* SelectRoomTypeTableViewController.swift in Sources */,
+				7B66412E29BF32A80059ABB8 /* Encode+Decode.swift in Sources */,
 				7B87E5EB29BA177A0005C96C /* RegistirationsTableViewController.swift in Sources */,
 				7B04C83D29B90DE80037361F /* AppDelegate.swift in Sources */,
 				7B04C85529B90E960037361F /* RegistirationModel.swift in Sources */,

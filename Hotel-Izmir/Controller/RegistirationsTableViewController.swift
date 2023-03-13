@@ -9,7 +9,7 @@ import UIKit
 
 class RegistirationsTableViewController: UITableViewController {
     //MARK: UI- Elements
-    
+
     //MARK: Properties
     var registirations = [RegistirationModel]()
     let identifier = "RegistirationCell"
@@ -71,7 +71,31 @@ class RegistirationsTableViewController: UITableViewController {
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedRow = registirations.remove(at: sourceIndexPath.row)
+        registirations.insert(movedRow, at: destinationIndexPath.row)
+        tableView.reloadData()
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            registirations.remove(at: indexPath.row)
+            
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
     //MARK: ACTIONS
+    
+    @IBAction func editButtonTapped(_ button: UIBarButtonItem) {
+        let tableViewEditingMode = tableView.isEditing
+        tableView.setEditing(!tableViewEditingMode, animated: true)
+    }
+    
     @IBAction func unwindFromAddRegistiration(unwindSegue: UIStoryboardSegue) {
         guard let source = unwindSegue.source as? AddRegistirationTableViewController,
               let registiration = source.registiration else { return }
