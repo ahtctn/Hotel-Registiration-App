@@ -20,19 +20,15 @@ class MapViewController: UIViewController {
     //MARK: PROPERTIES
     //Hem instance hem property olarak oluşturduk.
     var locationManager: CLLocationManager? = CLLocationManager()
-    let distanceSpan: CLLocationDistance = 500
-    let locationLatLon = CLLocation(latitude: 39.82, longitude: -86.344235)
+    private var places: [PlaceAnnotaiton] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         locationManagerUpdates()
         mapView.showsUserLocation = true
         checkLocationAuthorization()
-    }
-    
-    private func zoomLevel(location: CLLocation) {
-        let mapCoordinates = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: distanceSpan, longitudinalMeters: distanceSpan)
-        mapView.setRegion(mapCoordinates, animated: true)
     }
     
     private func locationManagerUpdates() {
@@ -75,9 +71,22 @@ class MapViewController: UIViewController {
         }
     }
     
+    private func presentPlacesSheet(places: [PlaceAnnotaiton]) {
+        guard let locationManager = locationManager,
+              let userLocation = locationManager.location else { return }
+        
+        let placesTableViewController = PlacesTableViewController(userLocation: userLocation, places: places)
+        placesTableViewController.modalPresentationStyle = .pageSheet
+        
+        if let sheet = placesTableViewController.sheetPresentationController{
+            sheet.prefersGrabberVisible = true
+            sheet.detents = [.medium(), .large()]
+            present(placesTableViewController, animated: true)
+        }
+    }
+    
     private func findNearbyPlaces(by query: String) {
-        //clear all annotations
-        //mapView.removeAnnotation(mapView.annotations as! MKAnnotation)
+        
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = query
         request.region = mapView.region
@@ -86,10 +95,14 @@ class MapViewController: UIViewController {
         search.start { [weak self ] response, error in
             guard let response = response, error == nil else { return }
             print(response.mapItems)
-            let places = response.mapItems.map(PlaceAnnotaiton.init)
-            places.forEach { place in
+            self?.places = response.mapItems.map(PlaceAnnotaiton.init)
+            self?.places.forEach { place in
                 self?.mapView.addAnnotation(place)
             }
+            if let places = self?.places {
+                self?.presentPlacesSheet(places: places)
+            }
+            
         }
     }
     
@@ -140,3 +153,26 @@ extension MapViewController: CLLocationManagerDelegate {
         print("Error: \(error.localizedDescription)")
     }
 }
+
+extension MapViewController: MKMapViewDelegate {
+    
+    private func clearAllSelections() {
+        self.places = self.places.map({ place in
+            place.isSelected = false
+            return place
+        })
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
+        clearAllSelections()
+        
+        guard let selectionAnnotation = annotation as? PlaceAnnotaiton else { return }
+        let placeAnnotaiton = self.places.first(where: { $0.id == selectionAnnotation.id })
+        placeAnnotaiton?.isSelected = true
+        presentPlacesSheet(places: self.places)
+    }
+    
+    
+}
+
+
