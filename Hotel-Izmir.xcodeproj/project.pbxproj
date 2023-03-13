@@ -18,6 +18,8 @@
 		7B0D0DC529BE9D8D00CEA9AD /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D0DC429BE9D8D00CEA9AD /* PlaceAnnotation.swift */; };
 		7B0D0DC829BE9F3B00CEA9AD /* CLLocationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D0DC729BE9F3B00CEA9AD /* CLLocationExtensions.swift */; };
 		7B0D0DCA29BEA90400CEA9AD /* PlacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D0DC929BEA90400CEA9AD /* PlacesTableViewController.swift */; };
+		7B0D0DCE29BEB50500CEA9AD /* PlaceMapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D0DCD29BEB50500CEA9AD /* PlaceMapDetailViewController.swift */; };
+		7B0D0DD029BEBE8700CEA9AD /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D0DCF29BEBE8700CEA9AD /* String+Extensions.swift */; };
 		7B87E5EB29BA177A0005C96C /* RegistirationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87E5EA29BA177A0005C96C /* RegistirationsTableViewController.swift */; };
 		7B87E5ED29BA279A0005C96C /* CustomerDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B87E5EC29BA279A0005C96C /* CustomerDetailTableViewController.swift */; };
 		7BAC71E029BC07A200BDCF79 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAC71DF29BC07A200BDCF79 /* MapViewController.swift */; };
@@ -41,6 +43,8 @@
 		7B0D0DC429BE9D8D00CEA9AD /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		7B0D0DC729BE9F3B00CEA9AD /* CLLocationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationExtensions.swift; sourceTree = "<group>"; };
 		7B0D0DC929BEA90400CEA9AD /* PlacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableViewController.swift; sourceTree = "<group>"; };
+		7B0D0DCD29BEB50500CEA9AD /* PlaceMapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMapDetailViewController.swift; sourceTree = "<group>"; };
+		7B0D0DCF29BEBE8700CEA9AD /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		7B87E5EA29BA177A0005C96C /* RegistirationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistirationsTableViewController.swift; sourceTree = "<group>"; };
 		7B87E5EC29BA279A0005C96C /* CustomerDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailTableViewController.swift; sourceTree = "<group>"; };
 		7BAC71DF29BC07A200BDCF79 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				7B0D0DC729BE9F3B00CEA9AD /* CLLocationExtensions.swift */,
+				7B0D0DCF29BEBE8700CEA9AD /* String+Extensions.swift */,
 			);
 			name = Extensions;
 			path = Controller;
@@ -151,6 +156,7 @@
 			children = (
 				7BAC71DF29BC07A200BDCF79 /* MapViewController.swift */,
 				7B0D0DC929BEA90400CEA9AD /* PlacesTableViewController.swift */,
+				7B0D0DCD29BEB50500CEA9AD /* PlaceMapDetailViewController.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -257,7 +263,9 @@
 				7BCA594D29BB61CF0028638C /* ExploreViewController.swift in Sources */,
 				7BAC71E029BC07A200BDCF79 /* MapViewController.swift in Sources */,
 				7B04C83F29B90DE80037361F /* SceneDelegate.swift in Sources */,
+				7B0D0DCE29BEB50500CEA9AD /* PlaceMapDetailViewController.swift in Sources */,
 				7B87E5ED29BA279A0005C96C /* CustomerDetailTableViewController.swift in Sources */,
+				7B0D0DD029BEBE8700CEA9AD /* String+Extensions.swift in Sources */,
 				7B0D0DC829BE9F3B00CEA9AD /* CLLocationExtensions.swift in Sources */,
 				7B04C85929B90F900037361F /* AddRegistirationTableViewController.swift in Sources */,
 				7BCA594F29BBA56C0028638C /* HotelPromotionCollectionViewCell.swift in Sources */,

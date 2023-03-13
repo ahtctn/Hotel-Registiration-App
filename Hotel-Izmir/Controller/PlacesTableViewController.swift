@@ -65,11 +65,9 @@ class PlacesTableViewController: UITableViewController {
         return cell
     }
     
-    
-    
-    
-
-
-    
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let place = places[indexPath.row]
+        let placeDetailViewController = PlaceMapDetailViewController(place: place)
+        present(placeDetailViewController, animated: true)
+    }
 }
