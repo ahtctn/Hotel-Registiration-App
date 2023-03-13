@@ -854,19 +854,57 @@
                                 <rect key="frame" x="0.0" y="103" width="430" height="746"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KCo-NJ-Bbf">
+                                <rect key="frame" x="0.0" y="103" width="430" height="746"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rep-VK-fM5">
+                                        <rect key="frame" x="172" y="398" width="87" height="35"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Settings"/>
+                                        <connections>
+                                            <action selector="goToSettingsButtonTapped:" destination="S8M-rv-gZQ" eventType="touchUpInside" id="CS3-mJ-Prw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="rep-VK-fM5" firstAttribute="leading" secondItem="KCo-NJ-Bbf" secondAttribute="leading" constant="172" id="4fl-Lu-QrN"/>
+                                    <constraint firstAttribute="trailing" secondItem="rep-VK-fM5" secondAttribute="trailing" constant="171" id="Z5B-pI-xWH"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you want to use location services feature, you can give the permission in the settings below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFZ-W2-udd">
+                                <rect key="frame" x="20" y="446" width="390" height="41"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dpE-vZ-F9U"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="qFZ-W2-udd" firstAttribute="top" secondItem="dpE-vZ-F9U" secondAttribute="top" constant="343" id="35l-KS-fb1"/>
                             <constraint firstItem="3Ek-4O-Dzv" firstAttribute="top" secondItem="dpE-vZ-F9U" secondAttribute="top" id="3sF-pB-3bG"/>
+                            <constraint firstItem="dpE-vZ-F9U" firstAttribute="bottom" secondItem="qFZ-W2-udd" secondAttribute="bottom" constant="362" id="7hA-TY-Jgu"/>
+                            <constraint firstItem="qFZ-W2-udd" firstAttribute="leading" secondItem="dpE-vZ-F9U" secondAttribute="leading" constant="20" id="CVz-X1-XRe"/>
+                            <constraint firstItem="rep-VK-fM5" firstAttribute="top" secondItem="qFZ-W2-udd" secondAttribute="bottom" constant="14" id="E7s-a6-ax5"/>
+                            <constraint firstItem="KCo-NJ-Bbf" firstAttribute="leading" secondItem="dpE-vZ-F9U" secondAttribute="leading" id="EaM-FN-Igl"/>
                             <constraint firstItem="3Ek-4O-Dzv" firstAttribute="leading" secondItem="dpE-vZ-F9U" secondAttribute="leading" id="Kud-aa-uX0"/>
                             <constraint firstItem="dpE-vZ-F9U" firstAttribute="bottom" secondItem="3Ek-4O-Dzv" secondAttribute="bottom" id="UAG-ij-k5P"/>
                             <constraint firstItem="dpE-vZ-F9U" firstAttribute="trailing" secondItem="3Ek-4O-Dzv" secondAttribute="trailing" id="VFZ-3T-qSs"/>
+                            <constraint firstItem="dpE-vZ-F9U" firstAttribute="trailing" secondItem="KCo-NJ-Bbf" secondAttribute="trailing" id="flH-be-6H2"/>
+                            <constraint firstItem="dpE-vZ-F9U" firstAttribute="trailing" secondItem="qFZ-W2-udd" secondAttribute="trailing" constant="20" id="fxv-CV-OWK"/>
+                            <constraint firstItem="KCo-NJ-Bbf" firstAttribute="top" secondItem="dpE-vZ-F9U" secondAttribute="top" id="hfQ-B2-Ca8"/>
+                            <constraint firstItem="dpE-vZ-F9U" firstAttribute="bottom" secondItem="KCo-NJ-Bbf" secondAttribute="bottom" id="qyb-qx-5qw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Navigation" id="HLR-g9-BOK"/>
                     <connections>
+                        <outlet property="goToSettingsButton" destination="rep-VK-fM5" id="vJH-dL-c8o"/>
+                        <outlet property="goToSettingsView" destination="KCo-NJ-Bbf" id="6N4-5J-Vcd"/>
                         <outlet property="mapView" destination="3Ek-4O-Dzv" id="JWf-BL-tED"/>
+                        <outlet property="warningLabel" destination="qFZ-W2-udd" id="HqM-sr-qGd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V3L-n2-LOp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

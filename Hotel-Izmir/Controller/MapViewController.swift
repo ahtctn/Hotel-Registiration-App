@@ -13,6 +13,9 @@ class MapViewController: UIViewController {
 
     //MARK: OUTLETS
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var goToSettingsView: UIView!
+    @IBOutlet weak var warningLabel: UILabel!
+    @IBOutlet weak var goToSettingsButton: UIButton!
 
     //MARK: PROPERTIES
     //Hem instance hem property olarak oluşturduk.
@@ -48,46 +51,78 @@ class MapViewController: UIViewController {
               let location = locationManager.location else { return }
         
         switch locationManager.authorizationStatus {
+        
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .denied:
+            deniedCase()
+        case .restricted:
+            restrictedCase()
+        
         case .authorizedWhenInUse, .authorizedAlways:
+            goToSettingsView.isHidden = true
+            warningLabel.isHidden = true
+            goToSettingsButton.isHidden = true
             
-            let alertName: String = "alertViewRestricted"
-            alertActions(actionName: alertName)
             let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 750, longitudinalMeters: 750)
             mapView.setRegion(region, animated: true)
-        
-        case .notDetermined, .denied:
-            let alertName: String = "alertViewNotDetermined_Denied"
-            alertActions(actionName: alertName)
-            
-            
-        case .restricted:
-            let alertName: String = "alertViewRestricted"
-            print("restricted")
-            alertActions(actionName: alertName)
+            findNearbyPlaces(by: "Hotel")
+                        
+            break
             
         @unknown default:
-            print("unknown default")
+            break
         }
     }
     
-    func alertActions(actionName: String) {
-        let alertViewNotDetermined_Denied = UIAlertController(title: "Not Authorized", message: "Location services for the Hotel Izmir is denied or not determined yet. Please check the authorizations for the app.", preferredStyle: .alert)
-        alertViewNotDetermined_Denied.addAction(UIAlertAction(title: "Open in Settings", style: .default, handler: { _ in
-            //burası
-        }))
+    private func findNearbyPlaces(by query: String) {
+        //clear all annotations
+        //mapView.removeAnnotation(mapView.annotations as! MKAnnotation)
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = query
+        request.region = mapView.region
         
-        let alertViewRestricted = UIAlertController(title: "Restricted", message: "Location services for the hotel Izmir is restricted. Please check the authorizations for the app.", preferredStyle: .alert)
-        alertViewRestricted.addAction(UIAlertAction(title: "Open in Settings", style: .default, handler: { _ in
-            //burası
-        }))
-        alertViewRestricted.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        
-        alertViewNotDetermined_Denied.addAction(UIAlertAction(title: "OK", style: .cancel))
-        if actionName == "alertViewNotDetermined_Denied" {
-            self.present(alertViewNotDetermined_Denied, animated: true)
-        } else if actionName == "alertViewRestricted"{
-            self.present(alertViewRestricted, animated: true)
+        let search = MKLocalSearch(request: request)
+        search.start { [weak self ] response, error in
+            guard let response = response, error == nil else { return }
+            print(response.mapItems)
+            let places = response.mapItems.map(PlaceAnnotaiton.init)
+            places.forEach { place in
+                self?.mapView.addAnnotation(place)
+            }
         }
+    }
+    
+    
+    private func deniedCase() {
+        let alertDenied = UIAlertController(title: "Not Authorized", message: "Location services for the Hotel Izmir is denied or not determined yet. Please check the authorizations for the app.", preferredStyle: .alert)
+        alertDenied.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alertDenied.addAction(UIAlertAction(title: "Open In Settings", style: .default, handler: { _ in
+            self.goToSettings()
+        }))
+        self.present(alertDenied, animated: true)
+    }
+    
+    private func restrictedCase() {
+        let alertViewRestricted = UIAlertController(title: "Restricted", message: "Location services for the hotel Izmir is restricted. Please check the authorizations for the app.", preferredStyle: .alert)
+        alertViewRestricted.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alertViewRestricted.addAction(UIAlertAction(title: "Open In Settings", style: .default, handler: { _ in
+            self.goToSettings()
+        }))
+        self.present(alertViewRestricted, animated: true)
+    }
+    
+    private func goToSettings() {
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    
+    //MARK: ACTIONS
+    @IBAction func goToSettingsButtonTapped(_ button: UIButton) {
+        goToSettings()
     }
 }
 
