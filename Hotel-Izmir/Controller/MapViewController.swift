@@ -62,7 +62,7 @@ class MapViewController: UIViewController {
             
             let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 750, longitudinalMeters: 750)
             mapView.setRegion(region, animated: true)
-            findNearbyPlaces(by: "Hotel")
+            findNearbyPlaces(by: "Hotel İzmir")
                         
             break
             
